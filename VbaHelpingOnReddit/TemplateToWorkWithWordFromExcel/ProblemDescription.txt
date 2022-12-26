@@ -1,0 +1,60 @@
+Number in excel copy and pasted to word doc
+https://www.reddit.com/r/vba/comments/zm1og9/number_in_excel_copy_and_pasted_to_word_doc/
+
+=====================================================================
+Background,
+
+90% of my job is financial analysis through inputting financials into 
+a very large excel spread sheet, and then writing about YoY or QoQ changes 
+with respects to their results and ratios.
+
+I am trying to create a macro that will copy the needed information (key 
+numbers, basic calculations, changes, %s etc.) from the excel document, 
+create a new word document, and then place them into a basic template I 
+will setup. If it is relevant, all the numbers are coded as "Accounting", 
+"Number", "Percentage", or "Custom"
+
+For example, if in cell "L5" is Company X's 2021 revenue of $100MM, and 
+in cell "M5" is their 2022 revenue of $105MM, after executing my macro 
+it will create a sentence on the word document such as "Revenues changed
+by 5% from $100MM to $105MM" (I will eventually change this to an if function
+ and replace "change" with increase/decrease depending on the value of M5/L5 
+but want to complete this first, any tips would be appreciated)
+
+My current code:
+'Late Binding
+Sub CreateWordDocUsing()
+Dim WordApp As Object
+Set WordApp = CreateObject("word.application")
+With WordApp
+.Visible = True
+.Activate
+.Documents.Add
+'A blank word document is created as per here
+With .Selection
+.Font.Size = 9
+.Font.Name = "Arial"
+.Typetext "Revenues changed by [{(M5/L5)-1}] from [{L5}] to [{M5}]"
+.TypeParagraph
+.Typetext "COGS went from"...
+End With
+End With
+End Sub
+--
+So I am a confused about the code that copies the number from the excel 
+sheet and inputs them in between the text string (inputting the "L5, M5" 
+numbers above).
+
+I've been experimenting with inputting the code below, but I can't get 
+it to work.
+
+Dim Copysheet As Worksheet
+Dim Pastesheet As This.Word.Document
+-
+.Copysheet.Range("L5:L5").Copy
+.Pastesheet.PasteSpecial Paste:=xlPasteValues
+
+Does anyone have any suggestions or comments? Do I need to use the above 
+and specify the name of the word document in the code? Was hoping to 
+avoid that
+=====================================================================

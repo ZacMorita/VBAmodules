@@ -1,0 +1,17 @@
+is there a way to edit XML TEXT with Excel VBA?
+https://www.reddit.com/r/vba/comments/zm2qjq/is_there_a_way_to_edit_xml_text_with_excel_vba/
+
+=====================================================================
+There are probably better ways to do this such as a powershell script 
+or a javascript.. but this is what I know. I have an XML file that 
+looks something like:
+
+<primary_identifier>john.doe@username.com</primary_identifier>
+...
+<username>jdoe123</username>
+
+I need to move the text within the username brackets to the primary 
+identifier field for like 1000 records. If this were just excel vba 
+text, I think I could do it. But XML in Excel imports in table format. 
+I can rename the files to txt
+=====================================================================

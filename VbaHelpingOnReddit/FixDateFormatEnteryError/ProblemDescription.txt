@@ -1,0 +1,15 @@
+dd.mm.yy text to dd/mm/yyyy
+https://www.reddit.com/r/vba/comments/zo5vhe/ddmmyy_text_to_ddmmyyyy/
+
+=====================================================================
+The short story to my issue is we have an excel sheet at work where our office staff input expiry dates 
+into an excel sheet and it then gets copied via vba codes over to a different excel spreadsheet for us 
+guys in the factory where we can use batch numbers etc. However, if the expiry date has expired, then 
+the date should not show up on our spreadsheet - this flags up that we shouldn’t be using the product 
+in the factory in short terms.
+
+However, here is the problem. The office staff keep entering expiry dates as “dd.mm.yyyy” on their 
+sheet and our factory spreadsheet does not recognise this as a date. So I’m trying to find a vba code 
+where, when the office staff input dd.mm.yyyy once they hit submit it will automatically change this 
+text to dd/mm/yyyy.. does anyone what the vba code would be?
+=====================================================================

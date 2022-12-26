@@ -1,0 +1,14 @@
+<root>
+    <person>
+        <primary_identifier>john.doe@username.com</primary_identifier>
+        <username>jdoe123</username>
+    </person>
+    <person>
+        <primary_identifier>smith.doe@username.com</primary_identifier>
+        <username>sdoe123</username>
+    </person>
+    <person>
+        <primary_identifier>jain.doe@username.com</primary_identifier>
+        <username>jdoe124</username>
+    </person>
+</root>

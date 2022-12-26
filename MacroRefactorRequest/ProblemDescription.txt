@@ -1,0 +1,33 @@
+Long used recorded macro has become cumbersome and problematic.
+Enlisted by employee, not company. Company and employee name omitted.
+
+=====================================================================
+I was contacted professionally to refactor a long used macro employed 
+to facilitate essential daily operations. Position and need dependent 
+changes exposed the nature and construction of the Excel VBA Macro as 
+problematic. I was given the following set of guidance and nothing 
+further. I reproduced the functionality of the macro through reverse 
+engineering. Upon completion and submission, only minor adjustments 
+were made to suit the needs of the requester.
+
+Improve:
+	- Speed
+	- Extensibility
+	- Readability
+	- Functionality
+	- Flexibility
+	- Maintainability
+Add:
+	- Structure
+	- Descriptive commentary
+	- Self-Documentation (Philosophy)
+	- Common Error catching/handling
+	- Optional conditional functionality
+Remove:
+	- Unnecessary lines (recordings)
+	- Reliance on Worksheet real-estate
+	- Functional interdependencies
+Special:
+	- Create handle cases for using available application resources when available (Outlook)
+	- Fix issue in attachment creation wherein resources not released after execution
+=====================================================================

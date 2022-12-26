@@ -1,0 +1,16 @@
+Search Column for Duplicate & Copy Value to Another Cell
+https://www.reddit.com/r/vba/comments/zq21s2/search_column_for_duplicate_copy_value_to_another/
+
+=====================================================================
+Hi Again All,
+
+I am stuck on this issue. I have a column of values in A1:A100. Most
+values begin with M###.. however there are a few cells that have
+"Agilent 5110" in them and should be excluded. What I need to do is
+look at the first 11 characters in each cell and find the duplicate,
+then copy that value and put it in cell "P3". There will be only one
+duplicate value in the column but it may appear several times.
+
+For some reason I am at a complete lose as to how to accomplish this.
+Anyone have any ideas?
+=====================================================================

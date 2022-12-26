@@ -1,0 +1,23 @@
+Vba code to copy a specific number of rows based on a cells value.
+https://www.reddit.com/r/vba/comments/zq5qq3/vba_code_to_copy_a_specific_number_of_rows_based/j0xutzs/?context=3
+
+=====================================================================
+I'm automating a few tasks and need to copy a range from Sheet B to A,
+but the number of rows in the range will be based on cell G2's value
+on Sheet A. I have tried setting the range like this
+
+Dim wb as Thisworkbook Dim ws as worksheet
+
+WsA = wb.Sheets("Sheet A") WsB = wb.Sheets("Sheet B")
+
+RowCount = WsA.range("G2").value
+
+Set rng = ws.Range("A2:B" & RowCount)
+
+The problem I have is that the list on sheet B is filtered so I
+would only want to copy what's visible E.g. If G2 on Sheet A is 7,
+I would only want to copy the first 7 visible rows on sheet b and
+paste in sheet A.
+
+Hope someone can help?
+=====================================================================

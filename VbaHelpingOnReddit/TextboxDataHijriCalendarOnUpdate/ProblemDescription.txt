@@ -1,0 +1,14 @@
+UserForm Date Hijri Arabic Format
+https://www.reddit.com/r/vba/comments/zmtcf5/userform_date_hijri_arabic_format/
+
+=====================================================================
+Hi guys, I have a textbox called "txtDate" that I insert date value in it, 
+But I want the date to be formatted in Hijri/Arabic, I have the code below 
+and it seems to only stick on English date format, Appreciate your help ;)
+
+UserForm Text box code:
+
+Private Sub txtDate_BeforeUpdate(ByVal Cancel As MSForms.ReturnBoolean) 
+Me.txtDate = Format(CDate(Me.txtDate), "[$-,297)B2yyyy-m-d;@") 
+End Sub
+=====================================================================

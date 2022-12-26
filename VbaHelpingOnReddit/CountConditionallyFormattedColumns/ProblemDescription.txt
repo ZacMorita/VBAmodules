@@ -1,0 +1,28 @@
+How do I make it so only one cell per column is counted?
+https://www.reddit.com/r/vba/comments/zlu3do/how_do_i_make_it_so_only_one_cell_per_column_is/
+
+=====================================================================
+Public Sub CountColorCells() 'Variable declaration Dim rng As Range Dim 
+lColorCounter As Long Dim rngCell As Range Dim ws As Worksheet
+
+    'Set the range
+Set rng = Sheet2.Range("B11:AB16")
+
+'loop throught each column in the range
+For i = 1 To rng.Columns.Count
+    'Check the first cell in the column for the color
+    If rng.Cells(1, i).DisplayFormat.Interior.Color = RGB(255, 199, 206) Then
+        lColorCounter = lColorCounter + 1
+    End If
+Next
+'Display the value in cell F21
+Sheet2.Range("F21") = lColorCounter
+End Sub
+
+I need this to check every cell in the range NOT just the first cell in 
+the column. But I only want it to count 1 per column if the color is 
+present. Also if I wanted to use Multiple user defined name ranges how 
+would that look?
+
+This is my first time using VBA so no judging lol.
+=====================================================================

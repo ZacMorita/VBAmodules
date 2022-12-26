@@ -1,0 +1,63 @@
+[Excel] Application.PrintCommunication different results
+https://www.reddit.com/r/vba/comments/znhvj0/excel_applicationprintcommunication_different/
+
+=====================================================================
+My vba-project shall put imported data into a certain format prior printing.
+
+I just added to it, same data should be copyed in a different format on a 
+second worksheet in the same file. Copied and adapted most of my code for 
+that. When it comes to pageformat and printarea, I run into bugs.
+
+Table 1 shall be portrait A4, via macrorecorder (or maybe googled it) I 
+came to this code, which has been running fine for months now:
+
+ Application.PrintCommunication = False
+    With ActiveSheet.PageSetup
+         .PrintTitleRows ="$1:$2"
+         .PrintTitleColumns = ""
+    End With
+ Application.PrintCommunication = True
+ ActiveSheet.PageSetup.PrintArea = ""
+ Application.PrintCommunication = False
+    With                                 'many stuff here, important right now: 
+         .Orientation = xlPortrait
+         .FitToPagesWide = 1
+         .FitToPagesTall = 0
+Sorry, on mobile app. /Edit on PC for readability.
+
+When I run debug step for step, I always get an error at
+
+.FitToPagesWide = 1
+
+it expects value between 10 to 400, which is bonkers. Minimum of 10 pages
+ wide...?? But running the whole script, that's always fine/works anyway 
+without any prompt. Why?
+
+But the main problem, which can't be ignored: this part still runs fine
+ and has done so for months now, further down in the second half of the 
+script (after changing the ActiveSheet to table2, which shall be landscape) 
+I have the exact same code 'except to two adaptations, but get an error at 
+a copypasted line which worked fine just 50 lines above in the same script:
+
+ Application.PrintCommunication = False
+    With ActiveSheet.PageSetup
+         .PrintTitleRows ="$1:$1"      'shorter title, so just 1 row
+         .PrintTitleColumns = ""
+    End With
+ Application.PrintCommunication = True 'error 1004, "failed method to object"
+ ActiveSheet.PageSetup.PrintArea = ""
+ Application.PrintCommunication = False
+    With                               '... stuff, thereof 
+         .Orientation = xlLandscape    'obviously
+         .FitToPagesWide = 1
+         .FitToPagesTall = 0
+I don't even understand what the falses and trues of PrintCommunication are 
+supposed to do here. I guess many commandlines could just be removed and it 
+would still work. I just want the pagebreaks to fit the UsedRange and that 
+to fit 1 page wide and as many pages tall as needed - which worked just fine 
+until I literally copied the macro for the second Worksheet.
+
+Any help is welcome. Thank you.
+
+/Edit PC deluxe Editor, some clarifications
+=====================================================================

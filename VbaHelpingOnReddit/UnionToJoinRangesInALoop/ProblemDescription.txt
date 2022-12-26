@@ -1,0 +1,40 @@
+How do you select multiple cells/rows within a loop?
+https://www.reddit.com/r/vba/comments/zkoorg/how_do_you_select_multiple_cellsrows_within_a_loop/
+
+=====================================================================
+I am trying to loop it so it checks for all cells in column A that are 
+not indented, and to select them, so that i can do stuff with all the 
+selected rows after the macro ends.
+
+Here is my code:
+
+ Option Explicit
+
+ 
+
+Sub RemoveNonIndents()
+
+ 
+
+    Dim r As Range
+
+ 
+
+    For Each r In Range("A6", Range("A6").End(xlDown))
+
+   
+
+        If InStr(r.Value, " ") = 1 Then
+
+            Range(r, r.End(xlToRight)).Select
+
+        End If
+
+ 
+
+    Next
+
+ 
+
+End Sub
+=====================================================================
