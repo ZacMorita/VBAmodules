@@ -1,0 +1,15 @@
+Data formating via macro
+https://www.reddit.com/r/vba/comments/101bvjn/data_formating_via_macro/
+
+=====================================================================
+Hi! I have one questin: I have excell filled with 31 list of dates in
+ format: 01-01-23, 02-01-23 etc. And one list as “total Sum” How can
+I add a macro with formating that the name of date’ll change by 1
+month, so I don’t need to rewrite every month the name of the list.
+If there is any possible way to code it I’ll be happy!
+
+Thanks all for help!
+
+Edit: it’s not list it’s sheets sorry, english it’s not my language
+and there is the language different
+=====================================================================

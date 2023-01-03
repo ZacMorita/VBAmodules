@@ -1,0 +1,13 @@
+[EXCEL] Autofill cells to TODAY date
+https://www.reddit.com/r/vba/comments/101u43k/excel_autofill_cells_to_today_date/
+
+=====================================================================
+Unfortunately the post was deleted by the user after Solving it.
+=====================================================================
+Sorry, this post was deleted by the person who originally posted it.
+It doesn't appear in any feeds, and anyone with a direct link to it
+will see a message like this one.
+=====================================================================
+My description: user wanted a button that filled dates sequentially
+from the last date in column "B" down until the current date.
+=====================================================================

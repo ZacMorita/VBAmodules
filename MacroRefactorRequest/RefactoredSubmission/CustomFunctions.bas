@@ -1,7 +1,7 @@
 Attribute VB_Name = "CustomFunctions"
 Option Explicit
 
-Public Function ConvertRangeToHTMLTable(rInput As Range) As String
+Public Function ConvertRangeToHTMLTable(ByRef rInput As Range) As String
     Dim rRow As Range
     Dim rCell As Range
     Dim strReturn As String

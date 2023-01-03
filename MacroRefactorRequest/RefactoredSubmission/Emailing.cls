@@ -61,6 +61,10 @@ ErrHandler:
         Resume Next 'This returns program flow to the line after the error occurred to create a new Outlook object.
     ElseIf Err.Number <> 0 Then
         'if error for reason other than 429 (outlook not open) then show the error and end the sub.
+        'Retrun error handling to default runtime popup
+        On Error GoTo 0
+        'Release resource (Outlook automation closes when no pointers)
+        Set OLApp = Nothing
         Err.Raise Err.Number
         Exit Sub
     End If
@@ -68,6 +72,7 @@ ErrHandler:
 End Sub
 
 Private Sub Class_Terminate()
+    'Release resource (Outlook automation closes when no pointers)
     Set OLApp = Nothing
 End Sub
 

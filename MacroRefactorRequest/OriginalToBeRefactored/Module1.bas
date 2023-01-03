@@ -630,8 +630,8 @@ Sheets("Input Data").Select
 Range("N17").Select
 
 '''Email content
-emailItem.To = "valving-dept@adec.onmicrosoft.com"
-emailItem.CC = ""     'Range("enter email here").Value
+emailItem.To = "jane.doe@example.com"
+emailItem.CC = "john.doe@example.com"     'Range("enter email here").Value
 emailItem.BCC = ""    'Range("enter email here").Value
 emailItem.Subject = "Hours from " & Range("N2").Value
 emailItem.HTMLBody = "Hello!" & "<br>" & "<br>" & "The attached file/table was last updated " & Range("N2").Value & "<br>" & "<br>" & ConvertRangeToHTMLTable(Sheet3.Range(tablerange)) & "<br>" & "<br>"
@@ -647,16 +647,16 @@ Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks:=Fals
 currentdate = Range("N1").Value
 newfilename = "Daily Passdown " & currentdate
 Workbooks.Add
-ChDir "S:\Valving\Daily Passdown & Andon Board"
-ActiveWorkbook.SaveAs Filename:="S:\Valving\Daily Passdown & Andon Board\" & newfilename & ".xlsm", FileFormat:=xlOpenXMLWorkbookMacroEnabled, CreateBackup:=False
+ChDir "C:\EXAMPLE\Daily Passdown & Andon Board"
+ActiveWorkbook.SaveAs Filename:="C:\EXAMPLE\Daily Passdown & Andon Board\" & newfilename & ".xlsm", FileFormat:=xlOpenXMLWorkbookMacroEnabled, CreateBackup:=False
 Windows("Andon Board V10.6.xlsm").Activate
-Workbooks.Open Filename:="S:\Valving\Daily Passdown & Andon Board\Andon Board V10.6.xlsm"
+Workbooks.Open Filename:="C:\EXAMPLE\Daily Passdown & Andon Board\Andon Board V10.6.xlsm"
 
 'Add passdown info copy to new workbook
 Sheets("Daily Passdown").Select
 Range("A1:H33").Select
 Selection.Copy
-Workbooks.Open "S:\Valving\Daily Passdown & Andon Board\" & newfilename & ".xlsm"
+Workbooks.Open "C:\EXAMPLE\Daily Passdown & Andon Board\" & newfilename & ".xlsm"
 Range("A1").Select
 Selection.PasteSpecial Paste:=xlPasteColumnWidths, Operation:=xlNone, SkipBlanks:=False, Transpose:=False
 ActiveSheet.Paste
@@ -670,7 +670,7 @@ Application.CutCopyMode = False
 Range("A1").Select
 
 'Calls workbook from files
-send = "S:\Valving\Daily Passdown & Andon Board\" & newfilename & ".xlsm"
+send = "C:\EXAMPLE\Daily Passdown & Andon Board\" & newfilename & ".xlsm"
 emailItem.Attachments.Add send
 
 '''Shows email before sending, use .Send to automatically send

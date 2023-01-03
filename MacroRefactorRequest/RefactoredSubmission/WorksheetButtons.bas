@@ -35,7 +35,7 @@ Public Sub SetConnectionPropertiesAndRefreshAll()
                 'Enable and disable all refreshing of current connection, ignores all other settings
                 .EnableRefresh = True
 
-                'Disables asynchronous refreshing, this should ensure the refresh completes before _
+                'Disables asynchronous refreshing, this ensures the refresh completes before _
                     emailing reports occurs (when ran in conjuntion with other automation processes)
                 .BackgroundQuery = False
 
@@ -151,17 +151,17 @@ Public Sub GenerateEmailFromWorkbookData()
     'CreateAttachment is a Class from this project
     Set CreateAttach = New CreateAttachment
 
-    Set PivTab = wb.Sheets("Pivot Table - Loaded Hours").PivotTables("PivotTable1")
-
-    'Set EmailBodyTable to adusted size and range using the dimensions of PivTab.TableRange1
-    Set EmailBodyTable = PivTab.TableRange1.Offset(1).Resize(PivTab.TableRange1.Rows.Count - 1)
-    
     'MoreThanAnHourAgo is a custom function from this project _
         This condition is commented out for a quick available option.
     'If CustomFunctions.MoreThanAnHourAgo(PivTab.RefreshDate) Then
         'a sub from this module
         WorksheetButtons.SetConnectionPropertiesAndRefreshAll
     'End If
+
+    Set PivTab = wb.Sheets("Pivot Table - Loaded Hours").PivotTables("PivotTable1")
+
+    'Set EmailBodyTable to adusted size and range using the dimensions of PivTab.TableRange1
+    Set EmailBodyTable = PivTab.TableRange1.Offset(1).Resize(PivTab.TableRange1.Rows.Count - 1)
 
     'a sub from this module
     WorksheetButtons.TransferDailyPassdown

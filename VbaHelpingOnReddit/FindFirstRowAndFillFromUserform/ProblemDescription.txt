@@ -1,0 +1,36 @@
+Finding first empty row in table with forms with userform button
+https://www.reddit.com/r/vba/comments/100l8ex/finding_first_empty_row_in_table_with_forms_with/
+
+=====================================================================
+When i try to add data to the first empty row in my table with forms
+useing my userform button it dossen't jump to the next empty row, it
+just overwrite the first row in the table.
+Is there a way to get it to find the next empty row insted of
+overwriting the first row?
+
+---------------------------------------------------------------------
+Private Sub Add_Click(
+
+Dim er As Long
+Dim ws As Worksheet
+
+    Set ws = Ark1
+    er = ws.Cells(ws.Rows.Count, 3).SpecialCells(xlCellTypeConstants).End(xlUp).row + 1
+    'er = ws.Cells(ws.Rows.Count, 3).End(xlUp).row + 1 'This starts at the bottom of my table, not on the first empty row
+
+        With ws
+            'Add data
+        .Cells(er, 1).Value = Me.Box1.Value
+        .Cells(er, 2).Value = Me.Box2.Value
+        .Cells(er, 13).Value = Me.Box3.Value
+        .Cells(er, 6).Value = Me.Box4.Value
+        .Cells(er, 8).Value = Me.Box5.Value
+        .Cells(er, 9).Value = Me.Box6.Value
+        .Cells(er, 5).Value = Me.Box7.Value
+        .Cells(er, 11).Value = Me.Text1.Value
+        End With
+End Sub
+---------------------------------------------------------------------
+
+I've been trying to solve this for an hour now xD
+=====================================================================
